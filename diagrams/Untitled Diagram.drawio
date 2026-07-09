@@ -1,0 +1,207 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" version="29.5.3">
+  <diagram name="Page-1" id="WM2HM-tdimNXeuWZwA4t">
+    <mxGraphModel dx="3420" dy="1413" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-20" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Layer 6: External Services" vertex="1">
+          <mxGeometry height="104" width="1816" x="596" y="1494" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-21" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Layer 5: Specialized Agents" vertex="1">
+          <mxGeometry height="328" width="2321" x="340" y="1116" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-260" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Nmsjmf1TXmadWdepGA9f-46" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-22" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Layer 4: Coordinator Agent" vertex="1">
+          <mxGeometry height="248" width="2465" x="271.5" y="818" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-23" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Layer 3: Backend" vertex="1">
+          <mxGeometry height="224" width="330" x="1236" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-24" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Layer 2: Frontend" vertex="1">
+          <mxGeometry height="248" width="330" x="1236" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-25" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" value="Layer 1: User" vertex="1">
+          <mxGeometry height="176" width="330" x="1236" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-26" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="User&#xa;(Destination, Dates, Budget, Interests, Preferences)" vertex="1">
+          <mxGeometry height="126" width="260" x="1273" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-27" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Frontend Application (React / Next.js)&#xa;- User input forms&#xa;- Itinerary display&#xa;- Recommendations&#xa;- Reservations&#xa;- Alerts" vertex="1">
+          <mxGeometry height="198" width="260" x="1273" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-28" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Backend API Server (FastAPI / Node.js)&#xa;- Authentication&#xa;- Request handling&#xa;- Agent communication&#xa;- Data processing" vertex="1">
+          <mxGeometry height="174" width="260" x="1271" y="569" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-29" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Coordinator Agent (C0MPASS Brain)&#xa;- Understand user request&#xa;- Select agents&#xa;- Manage workflow&#xa;- Combine responses&#xa;- Generate final plan" vertex="1">
+          <mxGeometry height="198" width="260" x="1271" y="843" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-30" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Planner Agent" vertex="1">
+          <mxGeometry height="54" width="160" x="360" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-31" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Food Discovery Agent" vertex="1">
+          <mxGeometry height="54" width="213" x="1728" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-32" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Local Events Agent" vertex="1">
+          <mxGeometry height="54" width="194" x="1079" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-33" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Weather Agent" vertex="1">
+          <mxGeometry height="54" width="165" x="863" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-34" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Budget Agent" vertex="1">
+          <mxGeometry height="54" width="155" x="1323" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-35" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Safety Agent" vertex="1">
+          <mxGeometry height="54" width="150" x="1528" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-36" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Route Optimization Agent" vertex="1">
+          <mxGeometry height="54" width="244" x="570" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-37" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Reservation Agent" vertex="1">
+          <mxGeometry height="54" width="189" x="2213" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-38" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Language Agent" vertex="1">
+          <mxGeometry height="54" width="172" x="1991" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-39" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Packing Agent" vertex="1">
+          <mxGeometry height="54" width="159" x="2452" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-40" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Maps API" vertex="1">
+          <mxGeometry height="54" width="122" x="631" y="1519" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-41" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Weather API" vertex="1">
+          <mxGeometry height="54" width="147" x="873" y="1519" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-42" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Events API" vertex="1">
+          <mxGeometry height="54" width="133" x="1109" y="1519" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-43" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Restaurant API" vertex="1">
+          <mxGeometry height="54" width="164" x="1753" y="1519" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-44" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Translation API" vertex="1">
+          <mxGeometry height="54" width="165" x="1994" y="1519" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-45" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Ticket APIs" vertex="1">
+          <mxGeometry height="54" width="137" x="2239" y="1519" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-46" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;" value="Database&#xa;PostgreSQL + Vector Database&#xa;- Users&#xa;- Preferences&#xa;- Travel history&#xa;- Saved trips&#xa;- Reservations&#xa;- AI memory" vertex="1">
+          <mxGeometry height="278" width="215" x="-50" y="803" as="geometry" />
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-47" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-26" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-27" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-48" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-27" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-28" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-49" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-28" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-29" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-50" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=0;exitY=0.58;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-30" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-51" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=1;exitY=0.69;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-31" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1835" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-52" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=0;exitY=0.86;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-32" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1176" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-53" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=0;exitY=0.68;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-33" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="946" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-54" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-34" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-55" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=1;exitY=0.9;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-35" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1603" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-56" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=0;exitY=0.61;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-36" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="692" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-57" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=1;exitY=0.59;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-37" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2308" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-58" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=1;exitY=0.62;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-38" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2077" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-59" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-29" style="curved=1;startArrow=block;endArrow=block;exitX=1;exitY=0.57;entryX=0.5;entryY=0;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-39" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2532" y="1066" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-60" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-36" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-40" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-61" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-33" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-41" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-62" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-32" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-42" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-63" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-31" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-43" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-64" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-38" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-44" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nmsjmf1TXmadWdepGA9f-65" edge="1" parent="1" source="Nmsjmf1TXmadWdepGA9f-37" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Nmsjmf1TXmadWdepGA9f-45" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
