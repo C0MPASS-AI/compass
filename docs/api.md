@@ -1,86 +1,71 @@
-# C0MPASS API Design
+# C0MPASS API Research
 
 ## Overview
 
-C0MPASS integrates with external APIs to provide real-time travel information.
+C0MPASS uses external APIs to provide real-time travel information.
 
-APIs allow specialized AI agents to access information about locations, weather, events, food, transportation, and reservations.
-
----
-
-# API Architecture
-
-User Request
-
-↓
-
-Frontend
-
-↓
-
-Backend API Server
-
-↓
-
-Coordinator Agent
-
-↓
-
-Specialized Agents
-
-↓
-
-External APIs
-
-↓
-
-AI Response
+APIs are used by specialized AI agents to generate personalized recommendations.
 
 ---
 
-# External APIs
+# 1. Maps & Directions API
 
-## 1. Maps & Location API
+## API
 
-Purpose:
+Google Maps Platform
 
-Provides location information and route optimization.
+## Purpose
 
-Used By:
+Provides:
+
+- Location search
+- Maps
+- Directions
+- Distance calculation
+- Travel time
+- Route optimization
+
+## Used By
 
 - Planner Agent
 - Route Optimization Agent
 - Landmark Recognition Agent
+- Sustainability Agent
 
-Provides:
+## Authentication
 
-- Directions
-- Distance calculations
-- Travel time
-- Nearby attractions
-- Location details
+API Key
+
+Stored using environment variables.
 
 Example:
 
-User:
-"Plan my Paris trip"
+```
+GOOGLE_MAPS_API_KEY
+```
 
-Route Agent:
-Finds the shortest route between attractions.
+## Free Tier
+
+Google provides monthly credits for API usage. Usage depends on API service.
+
+## Documentation
+
+https://developers.google.com/maps
+
+## Backup Options
+
+- Mapbox API
+- OpenStreetMap + OSRM
 
 ---
 
 # 2. Weather API
 
-Purpose:
+## API
 
-Provides real-time and forecast weather information.
+OpenWeather API
 
-Used By:
-
-- Live Conditions Agent
-- Planner Agent
-- Packing Assistant Agent
+## Purpose
 
 Provides:
 
@@ -90,188 +75,341 @@ Provides:
 - Rain probability
 - Weather alerts
 
+## Used By
+
+- Live Conditions Agent
+- Packing Assistant Agent
+- Planner Agent
+
+## Authentication
+
+API Key
+
 Example:
 
-Heavy rain detected → Planner changes outdoor activity.
+```
+OPENWEATHER_API_KEY
+```
+
+## Free Tier
+
+Free tier available with limited API calls.
+
+## Documentation
+
+https://openweathermap.org/api
+
+## Backup Options
+
+- WeatherAPI
+- Tomorrow.io
 
 ---
 
 # 3. Events API
 
-Purpose:
+## API
 
-Finds local events during travel dates.
+Ticketmaster Discovery API
 
-Used By:
+## Purpose
 
-- Local Events Agent
-
-Provides:
+Finds:
 
 - Concerts
 - Festivals
-- Exhibitions
 - Sports events
-- Markets
+- Performances
 
-Filters:
+## Used By
 
-- Date
-- Location
-- Category
-- Budget
+- Local Events Agent
+- Ticket & Reservation Agent
+
+## Authentication
+
+API Key
+
+Example:
+
+```
+TICKETMASTER_API_KEY
+```
+
+## Free Tier
+
+Free developer access with request limits.
+
+## Documentation
+
+https://developer.ticketmaster.com/
+
+## Backup Options
+
+- Eventbrite API
+- PredictHQ API
 
 ---
 
 # 4. Restaurant & Food API
 
-Purpose:
+## API
 
-Provides food recommendations.
+Yelp Fusion API
 
-Used By:
-
-- Food Discovery Agent
+## Purpose
 
 Provides:
 
 - Restaurants
-- Cuisine type
-- Location
-- Price range
 - Reviews
+- Categories
+- Price levels
+- Locations
 
-Filters:
+## Used By
 
-- Vegetarian
-- Halal
-- Kosher
-- Budget
-- User preferences
+- Food Discovery Agent
+
+## Authentication
+
+API Key
+
+Example:
+
+```
+YELP_API_KEY
+```
+
+## Free Tier
+
+Free access with daily request limits.
+
+## Documentation
+
+https://docs.developer.yelp.com/
+
+## Backup Options
+
+- Foursquare Places API
+- Google Places API
 
 ---
 
 # 5. Translation API
 
-Purpose:
+## API
 
-Provides language assistance.
+Google Cloud Translation API
 
-Used By:
+## Purpose
+
+Provides:
+
+- Language translation
+- Local phrases
+- Travel communication help
+
+## Used By
 
 - Language Helper Agent
 
-Provides:
+## Authentication
 
-- Translation
-- Common phrases
-- Pronunciation
+Google Cloud API Key
 
-Examples:
+Example:
 
-"Where is the train station?"
+```
+TRANSLATION_API_KEY
+```
 
-"How much does this cost?"
+## Free Tier
 
----
+Limited monthly characters available.
 
-# 6. Ticket & Reservation APIs
+## Documentation
 
-Purpose:
+https://cloud.google.com/translate/docs
 
-Handles booking information.
+## Backup Options
 
-Used By:
-
-- Ticket & Reservation Agent
-
-Provides:
-
-- Attraction tickets
-- Museum reservations
-- Event tickets
-- Booking information
-
-Features:
-
-- Save reservations
-- Track confirmation numbers
-- Send reminders
+- DeepL API
 
 ---
 
-# 7. Image Recognition API
+# 6. Image Recognition API
 
-Purpose:
+## API
 
-Identifies landmarks from images.
+Google Cloud Vision API
 
-Used By:
+## Purpose
+
+Identifies:
+
+- Landmarks
+- Buildings
+- Locations
+
+## Used By
 
 - Landmark Recognition Agent
 
+## Authentication
+
+Google Cloud credentials
+
+## Free Tier
+
+Limited monthly usage available.
+
+## Documentation
+
+https://cloud.google.com/vision/docs
+
+## Backup Options
+
+- AWS Rekognition
+- Azure Computer Vision
+
+---
+
+# 7. AI Model API
+
+## API
+
+OpenAI API
+
+## Purpose
+
 Provides:
 
-- Landmark identification
-- Historical information
-- Nearby attractions
+- Natural language understanding
+- Reasoning
+- Recommendation generation
+- Conversation
+
+## Used By
+
+- Coordinator Agent
+- All AI Agents
+
+## Authentication
+
+API Key
+
+Example:
+
+```
+OPENAI_API_KEY
+```
+
+## Free Tier
+
+Usage-based pricing.
+
+## Documentation
+
+https://platform.openai.com/docs
+
+## Backup Options
+
+- Anthropic Claude API
+- Google Gemini API
 
 ---
 
 # 8. Authentication API
 
-Purpose:
+## API
 
-Handles user accounts.
+Firebase Authentication
 
-Used By:
+## Purpose
 
-- Backend System
+Handles:
 
-Provides:
-
-- User login
-- Registration
-- Authentication
+- Signup
+- Login
+- User identity
 - Session management
+
+## Used By
+
+Backend System
+
+## Authentication
+
+Firebase configuration keys.
+
+## Free Tier
+
+Spark Plan available.
+
+## Documentation
+
+https://firebase.google.com/docs/auth
+
+## Backup Options
+
+- Auth0
+- Supabase Auth
+
+---
+
+# API Failure Handling
+
+If an API becomes unavailable:
+
+C0MPASS should:
+
+1. Detect API failure
+2. Notify Coordinator Agent
+3. Use backup API if available
+4. Provide a fallback recommendation
+5. Inform the user if information is unavailable
+
+Example:
+
+Weather API unavailable:
+
+Instead of:
+
+"Unable to plan."
+
+Return:
+
+"Weather information is temporarily unavailable. Here is a plan based on typical conditions."
+
+---
+
+# API Security Rules
+
+All API keys must:
+
+- Never be stored in code
+- Use environment variables
+- Be hidden from frontend
+- Be rotated regularly
+- Have usage monitoring
 
 ---
 
 # API-Agent Relationship
 
-| Agent | Required APIs |
-|---|---|
+| Agent | APIs |
+|-|-|
+| Coordinator Agent | OpenAI |
 | Planner Agent | Maps, Weather |
-| Events Agent | Events API |
-| Food Agent | Restaurant API |
-| Weather Agent | Weather API |
-| Budget Agent | None/Cost APIs |
-| Safety Agent | Weather, Transport APIs |
-| Sustainability Agent | Maps, Transport APIs |
-| Route Agent | Maps API |
-| Landmark Agent | Image Recognition API |
-| Packing Agent | Weather API |
+| Events Agent | Ticketmaster/Eventbrite |
+| Food Agent | Yelp/Foursquare |
+| Weather Agent | OpenWeather |
+| Budget Agent | Internal calculations |
+| Safety Agent | Weather, Transport |
+| Sustainability Agent | Maps |
+| Route Agent | Maps |
+| Landmark Agent | Vision API |
+| Packing Agent | Weather |
 | Reservation Agent | Ticket APIs |
 | Language Agent | Translation API |
-
----
-
-# API Security
-
-Requirements:
-
-- Store API keys securely
-- Use environment variables
-- Limit API access
-- Monitor API usage
-- Handle API failures
-
----
-
-# Future API Integrations
-
-- Flight booking APIs
-- Hotel booking APIs
-- Public transportation APIs
-- Currency exchange APIs
-- Social travel APIs
