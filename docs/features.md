@@ -10,7 +10,7 @@
 
 **Team Members**
 - Tejasvi Yallavula
-- Hitaishi
+- Hitaishi Posanpeta
 
 ---
 
