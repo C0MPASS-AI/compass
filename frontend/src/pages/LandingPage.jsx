@@ -5,41 +5,54 @@ import AgentFeatureGrid from '../components/AgentFeatureGrid';
 import Footer from '../components/Footer';
 
 export default function LandingPage({ onGetStarted = () => {}, heroImageUrl }) {
+  const bgImage = heroImageUrl || '/background1.jpg';
+
   return (
-    <div className="min-h-screen bg-white font-body">
-      <section className="relative">
-        <div
-          className="relative h-[560px] w-full bg-cover bg-center"
-          style={{
-            backgroundImage: heroImageUrl
-              ? `url(${heroImageUrl})`
-              : 'linear-gradient(160deg, #1F6F78 0%, #2C4B5E 45%, #1A2E3B 100%)',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/30" />
+    <div className="relative min-h-screen font-body text-white flex flex-col bg-slate-900">
+      {/* Background Image fixed behind everything */}
+      <img
+        src={bgImage}
+        alt="Background"
+        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
+      />
 
-          <Navbar variant="light" />
+      {/* Main Content Overlay */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar variant="light" />
 
-          <div className="relative z-10 h-full flex flex-col justify-center px-6 pt-10">
-            <h1 className="font-display text-white text-[34px] leading-[1.2] max-w-[260px]">
-              The travel orchestrator that plans, books, and continuously
-              adjusts&hellip;
-            </h1>
+        {/* Hero Section */}
+        <section className="min-h-[85vh] flex flex-col items-center justify-center text-center px-6 py-12">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-tight max-w-3xl drop-shadow-md">
+            the travel, <br />
+            orchestrator, <br />
+            that plans, <br />
+            books and, <br />
+            continuously, <br />
+            adjusts
+          </h1>
 
-            <button
-              onClick={onGetStarted}
-              className="mt-6 self-start bg-compass-ink text-white font-body text-sm
-                px-6 py-3 rounded-pill hover:bg-black transition-colors"
-            >
-              Get Started
-            </button>
+          <button
+            onClick={onGetStarted}
+            className="mt-8 bg-white text-black font-body text-base font-semibold
+              px-8 py-3.5 rounded-full hover:bg-gray-200 transition-colors shadow-lg"
+          >
+            Get Started
+          </button>
+        </section>
+
+        {/* Main Content Area with gap between sections */}
+        <main className="flex-1 flex flex-col gap-24 py-16 px-6 max-w-6xl mx-auto w-full">
+          <InteractivePreviewPlaceholder />
+          <AgentFeatureGrid />
+        </main>
+
+        {/* Footer */}
+        <footer className="w-full bg-black/40 backdrop-blur-md py-6 mt-12">
+          <div className="max-w-6xl mx-auto px-6">
+            <Footer />
           </div>
-        </div>
-      </section>
-
-      <InteractivePreviewPlaceholder />
-      <AgentFeatureGrid />
-      <Footer />
+        </footer>
+      </div>
     </div>
   );
 }
