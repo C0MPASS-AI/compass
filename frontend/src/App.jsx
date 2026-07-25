@@ -21,9 +21,11 @@ function App() {
       )}
 
       {screen === 'preferences' && (
-        <TravelPreferencesForm
-          onBack={() => setScreen('landing')}
-          onNext={(selected) => console.log('selected:', selected)}
+  <TravelPreferencesForm
+    onExit={() => setScreen('landing')}
+    onComplete={(allAnswers) => {
+      console.log('survey complete:', allAnswers);
+    }}
         />
       )}
 

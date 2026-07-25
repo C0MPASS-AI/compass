@@ -51,7 +51,7 @@ export default function TravelPreferencesForm({ onExit, onComplete }) {
   return (
     <div
       className="min-h-screen bg-cover bg-center flex flex-col"
-      style={{ backgroundImage: 'url(/background2.jpg)' }}
+      style={{ backgroundImage: 'url(public/background2.jpg)' }}
     >
       {/* Top bar: back arrow + progress */}
       <div className="flex items-center gap-4 px-5 pt-6">
