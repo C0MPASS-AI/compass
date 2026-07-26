@@ -14,16 +14,16 @@ export default function OrchestrationLoading({ onBack, onViewItinerary }) {
   const { visibleMessages, isComplete } = useTripAgentStatus(AGENT_MESSAGES);
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center flex flex-col"
-      style={{ backgroundImage: 'url(/background3.jpg)' }}
-    >
-      {/* Top section: back arrow + logo + heading */}
-      <div className="flex flex-col items-center pt-6 pb-10 px-5">
+    <div className="h-screen flex flex-col">
+      {/* Top half: photo section, logo centered within it */}
+      <div
+        className="relative h-1/2 bg-cover bg-center flex flex-col items-center justify-center px-5"
+        style={{ backgroundImage: 'url(/background3.jpg)' }}
+      >
         <button
           onClick={onBack}
           aria-label="Go back"
-          className="self-start text-white mb-8"
+          className="absolute top-6 left-5 text-white"
         >
           <ArrowLeft size={22} />
         </button>
@@ -37,9 +37,9 @@ export default function OrchestrationLoading({ onBack, onViewItinerary }) {
         </h1>
       </div>
 
-      {/* Bottom sheet: status feed + CTA */}
-      <div className="flex-1 bg-white rounded-t-3xl px-6 pt-3 pb-8 flex flex-col">
-        <div className="w-16 h-1.5 bg-slate-300 rounded-full mx-auto mb-6" />
+      {/* Bottom half: status feed + CTA */}
+      <div className="h-1/2 bg-white rounded-t-3xl px-6 pt-3 pb-8 flex flex-col">
+        <div className="w-16 h-1.5 bg-slate-300 rounded-full mx-auto mb-6 flex-shrink-0" />
 
         <div className="flex-1 flex flex-col gap-5 overflow-y-auto">
           {visibleMessages.map((message, i) => (
@@ -53,7 +53,7 @@ export default function OrchestrationLoading({ onBack, onViewItinerary }) {
           <button
             onClick={onViewItinerary}
             className="mt-6 w-full bg-blue-600 text-white font-medium rounded-full py-3.5
-              hover:bg-blue-700 transition-colors"
+              hover:bg-blue-700 transition-colors flex-shrink-0"
           >
             View My Itinerary
           </button>

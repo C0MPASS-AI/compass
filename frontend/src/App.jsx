@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import LandingPage from './pages/LandingPage';
 import TravelPreferencesForm from './pages/TravelPreferencesForm';
 import SignUpModal from './components/SignUpModal';
+import OrchestrationLoading from './pages/OrchestrationLoading';
+import ItineraryPage from './pages/ItineraryPage';
 
 function App() {
   const [screen, setScreen] = useState('landing'); // 'landing' | 'preferences'
@@ -21,12 +23,23 @@ function App() {
       )}
 
       {screen === 'preferences' && (
-  <TravelPreferencesForm
-    onExit={() => setScreen('landing')}
-    onComplete={(allAnswers) => {
-      console.log('survey complete:', allAnswers);
-    }}
+        <TravelPreferencesForm
+          onExit={() => setScreen('landing')}
+          onComplete={(allAnswers) => {
+            console.log('survey complete:', allAnswers);
+            setScreen('loading');
+          }}
         />
+      )}
+
+      {screen === 'loading' && (
+        <OrchestrationLoading
+          onBack={() => setScreen('preferences')}
+          onViewItinerary={() => setScreen('itinerary')}
+        />
+      )}
+      {screen === 'itinerary' && (
+        <ItineraryPage onBack={() => setScreen('loading')} />
       )}
 
       <SignUpModal

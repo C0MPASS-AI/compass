@@ -26,7 +26,7 @@ export default function LandingPage({ onGetStarted = () => {}, heroImageUrl }) {
             the travel, <br />
             orchestrator, <br />
             that plans, <br />
-            books and, <br />
+            books and <br />
             continuously, <br />
             adjusts
           </h1>
