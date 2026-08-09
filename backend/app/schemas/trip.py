@@ -36,6 +36,20 @@ class TripCreate(BaseModel):
         if self.start_date >= self.end_date:
             raise ValueError("start_date must be before end_date")
         return self
+    @field_validator("interests")
+    @classmethod
+    def sanitize_interests(cls, v):
+        cleaned = [item.strip() for item in v if item and item.strip()]
+        if not cleaned:
+            raise ValueError("At least one interest must be provided")
+        return cleaned
+
+    @field_validator("travel_style")
+    @classmethod
+    def sanitize_travel_style(cls, v):
+        if not v or not v.strip():
+            raise ValueError("Travel style cannot be empty")
+        return v.strip()
 
 
 class TripResponse(BaseModel):

@@ -1,4 +1,3 @@
-import json
 import logging
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
@@ -9,7 +8,7 @@ from app.core.exceptions import AppException
 from app.core.responses import success_response
 from app.crud.trip import create_trip
 from app.crud.itinerary import create_itinerary_entries
-from app.agents.planner import planner
+from app.services.planner_service import generate_itinerary, PlannerServiceError
 
 router = APIRouter(tags=["Planner"])
 logger = logging.getLogger(__name__)
@@ -21,39 +20,25 @@ def plan_trip(request: TripCreate, db: Session = Depends(get_db)):
 
     # 1. Save trip details
     trip = create_trip(db, request)
+    logger.debug(f"Trip saved with id={trip.id}")
 
-    # 2. Generate itinerary via AI agent
+    # 2. Generate itinerary (delegated to PlannerService)
     num_days = (request.end_date - request.start_date).days + 1
-    prompt = f"""
-    Plan a {num_days}-day trip to {request.destination}.
-    Budget: ${request.budget}
-    Interests: {", ".join(request.interests)}
-    Travel style: {request.travel_style}
-
-    Respond with ONLY valid JSON (no markdown, no commentary) in this exact shape:
-    {{
-      "days": [
-        {{"day_number": 1, "activities": ["...", "..."], "estimated_cost": 120.0}}
-      ]
-    }}
-    """
-
-    result = planner.invoke({"request": prompt, "response": ""})
-    raw_response = result.get("response", "")
-
     try:
-        parsed = json.loads(raw_response)
-        days = parsed["days"]
-    except (json.JSONDecodeError, KeyError, TypeError) as e:
-        logger.error(f"Failed to parse AI itinerary response: {e}")
-        raise AppException(
-            message="Failed to generate itinerary. Please try again.",
-            status_code=502,
-            errors=[str(e)],
+        days = generate_itinerary(
+            destination=request.destination,
+            num_days=num_days,
+            budget=request.budget,
+            interests=request.interests,
+            travel_style=request.travel_style,
         )
+    except PlannerServiceError as e:
+        logger.error(f"Planner service failed for trip_id={trip.id}: {e.message}")
+        raise AppException(message=e.message, status_code=502)
 
     # 3. Save itinerary
     itinerary_entries = create_itinerary_entries(db, trip.id, days)
+    logger.debug(f"Saved {len(itinerary_entries)} itinerary entries for trip_id={trip.id}")
 
     # 4. Return response
     return success_response(

@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from app.core.middleware import RequestLoggingMiddleware
 
 from app.api import test, auth, trips, planner
 from app.core.logging_config import setup_logging
@@ -37,6 +38,8 @@ app.include_router(test.router)
 app.include_router(auth.router)
 app.include_router(trips.router)
 app.include_router(planner.router)
+
+app.add_middleware(RequestLoggingMiddleware)
 
 
 @app.get("/")
