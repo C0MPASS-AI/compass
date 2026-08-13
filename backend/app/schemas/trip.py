@@ -9,6 +9,8 @@ class TripCreate(BaseModel):
     budget: int
     interests: list[str]
     travel_style: str
+    transportation: str = "Public Transit"
+    pace: str = "Balanced"
 
     @field_validator("destination")
     @classmethod

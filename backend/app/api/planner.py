@@ -31,7 +31,9 @@ def plan_trip(request: TripCreate, db: Session = Depends(get_db)):
             budget=request.budget,
             interests=request.interests,
             travel_style=request.travel_style,
-        )
+            transportation=request.transportation,
+            pace=request.pace,
+)
     except PlannerServiceError as e:
         logger.error(f"Planner service failed for trip_id={trip.id}: {e.message}")
         raise AppException(message=e.message, status_code=502)
